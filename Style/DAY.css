@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap');
+@property --days {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --hours {
+  syntax: "<integer>";@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap');
+@property --days {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --hours {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --minutes {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --seconds {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  align-content: start;
+  background: oklch(0.2 0.03 285);
+  color: oklch(0.95 0.03 285);
+  display: grid;
+  font-family: system-ui, sans-serif;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+h1 { font-size: 7cqi; }
+h2 {
+  color: oklch(0.6 0.03 285);
+  font-size: 4cqi;
+}
+
+.ui-countdown {
+  all: unset;
+  background: oklch(0.3 0.03 285);
+  border-radius: .5ch;
+  container-type:inline-size;
+  display: grid;
+  font-size: 2cqi;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  gap: 1cqi;
+  grid-auto-flow: column;
+  padding: 1ch;
+  transform: translateZ(0);
+  will-change: transform;
+
+  & li {
+    background: oklch(0.5 0.03 285);
+    border-radius: .5ch;
+    display: grid;
+    list-style: none;
+    padding: .5ch 1ch;
+    text-align: center;
+    width: 24cqi;
+    &::before {
+      color:  oklch(0.85 0.03 285);
+      font-size: 10cqi;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px oklch(0.2 0.03 285);
+    }
+
+    &[data-label=day] {
+      animation: days 31536000s steps(365, jump-none) infinite;
+      animation-delay: var(--delay-days, 0s);
+      counter-reset: days var(--days);
+      &::before { content: counter(days, decimal-leading-zero) '  '; }
+    }
+    &[data-label=hour] {
+      animation: hours 86400s steps(24, jump-none) infinite;
+      animation-delay: var(--delay-hours, 0s);
+      counter-reset: hours var(--hours);
+      &::before { content: counter(hours, decimal-leading-zero) ' '; }
+    }
+    &[data-label=minutes] {
+      animation: minutes 3600s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-minutes, 0s);
+      counter-reset: minutes var(--minutes);
+      &::before { content: counter(minutes, decimal-leading-zero) ' '; }
+    }
+    &[data-label=seconds] {
+      animation: seconds 60s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-seconds, 0s);
+      counter-reset: seconds var(--seconds);
+      &::before { content: counter(seconds, decimal-leading-zero) ' '; }
+    }
+  }
+}
+
+@keyframes days {
+  from { --days: 364; }
+  to { --days: 0; } 
+}
+@keyframes hours {
+  from { --hours: 23; }
+  to { --hours: 0; } 
+}
+@keyframes minutes { 
+  from { --minutes: 59; }
+  to { --minutes: 0; } 
+}
+@keyframes seconds { 
+  from { --seconds: 59; }
+  to { --seconds: 0; }
+}@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap');
+@property --days {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --hours {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --minutes {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --seconds {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  align-content: start;
+  background: oklch(0.2 0.03 285);
+  color: oklch(0.95 0.03 285);
+  display: grid;
+  font-family: system-ui, sans-serif;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+h1 { font-size: 7cqi; }
+h2 {
+  color: oklch(0.6 0.03 285);
+  font-size: 4cqi;
+}
+
+.ui-countdown {
+  all: unset;
+  background: oklch(0.3 0.03 285);
+  border-radius: .5ch;
+  container-type:inline-size;
+  display: grid;
+  font-size: 2cqi;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  gap: 1cqi;
+  grid-auto-flow: column;
+  padding: 1ch;
+  transform: translateZ(0);
+  will-change: transform;
+
+  & li {
+    background: oklch(0.5 0.03 285);
+    border-radius: .5ch;
+    display: grid;
+    list-style: none;
+    padding: .5ch 1ch;
+    text-align: center;
+    width: 24cqi;
+    &::before {
+      color:  oklch(0.85 0.03 285);
+      font-size: 10cqi;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px oklch(0.2 0.03 285);
+    }
+
+    &[data-label=day] {
+      animation: days 31536000s steps(365, jump-none) infinite;
+      animation-delay: var(--delay-days, 0s);
+      counter-reset: days var(--days);
+      &::before { content: counter(days, decimal-leading-zero) '  '; }
+    }
+    &[data-label=hour] {
+      animation: hours 86400s steps(24, jump-none) infinite;
+      animation-delay: var(--delay-hours, 0s);
+      counter-reset: hours var(--hours);
+      &::before { content: counter(hours, decimal-leading-zero) ' '; }
+    }
+    &[data-label=minutes] {
+      animation: minutes 3600s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-minutes, 0s);
+      counter-reset: minutes var(--minutes);
+      &::before { content: counter(minutes, decimal-leading-zero) ' '; }
+    }
+    &[data-label=seconds] {
+      animation: seconds 60s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-seconds, 0s);
+      counter-reset: seconds var(--seconds);
+      &::before { content: counter(seconds, decimal-leading-zero) ' '; }
+    }
+  }
+}
+
+@keyframes days {
+  from { --days: 364; }
+  to { --days: 0; } 
+}
+@keyframes hours {
+  from { --hours: 23; }
+  to { --hours: 0; } 
+}
+@keyframes minutes { 
+  from { --minutes: 59; }
+  to { --minutes: 0; } 
+}
+@keyframes seconds { 
+  from { --seconds: 59; }
+  to { --seconds: 0; }
+}
+  initial-value: 0;
+  inherits: false;
+}
+@property --minutes {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+@property --seconds {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  align-content: start;
+  background: oklch(0.2 0.03 285);
+  color: oklch(0.95 0.03 285);
+  display: grid;
+  font-family: system-ui, sans-serif;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+h1, h2 {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+h1 { font-size: 7cqi; }
+h2 {
+  color: oklch(0.6 0.03 285);
+  font-size: 4cqi;
+}
+
+.ui-countdown {
+  all: unset;
+  background: oklch(0.3 0.03 285);
+  border-radius: .5ch;
+  container-type:inline-size;
+  display: grid;
+  font-size: 2cqi;
+  font-variant-numeric: tabular-nums;
+  font-weight: 300;
+  gap: 1cqi;
+  grid-auto-flow: column;
+  padding: 1ch;
+  transform: translateZ(0);
+  will-change: transform;
+
+  & li {
+    background: oklch(0.5 0.03 285);
+    border-radius: .5ch;
+    display: grid;
+    list-style: none;
+    padding: .5ch 1ch;
+    text-align: center;
+    width: 24cqi;
+    &::before {
+      color:  oklch(0.85 0.03 285);
+      font-size: 10cqi;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px oklch(0.2 0.03 285);
+    }
+
+    &[data-label=day] {
+      animation: days 31536000s steps(365, jump-none) infinite;
+      animation-delay: var(--delay-days, 0s);
+      counter-reset: days var(--days);
+      &::before { content: counter(days, decimal-leading-zero) '  '; }
+    }
+    &[data-label=hour] {
+      animation: hours 86400s steps(24, jump-none) infinite;
+      animation-delay: var(--delay-hours, 0s);
+      counter-reset: hours var(--hours);
+      &::before { content: counter(hours, decimal-leading-zero) ' '; }
+    }
+    &[data-label=minutes] {
+      animation: minutes 3600s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-minutes, 0s);
+      counter-reset: minutes var(--minutes);
+      &::before { content: counter(minutes, decimal-leading-zero) ' '; }
+    }
+    &[data-label=seconds] {
+      animation: seconds 60s steps(60, jump-none) infinite;
+      animation-delay: var(--delay-seconds, 0s);
+      counter-reset: seconds var(--seconds);
+      &::before { content: counter(seconds, decimal-leading-zero) ' '; }
+    }
+  }
+}
+
+@keyframes days {
+  from { --days: 364; }
+  to { --days: 0; } 
+}
+@keyframes hours {
+  from { --hours: 23; }
+  to { --hours: 0; } 
+}
+@keyframes minutes { 
+  from { --minutes: 59; }
+  to { --minutes: 0; } 
+}
+@keyframes seconds { 
+  from { --seconds: 59; }
+  to { --seconds: 0; }
+}
